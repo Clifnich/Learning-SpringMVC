@@ -1,5 +1,8 @@
 package com.puzhen.in28minutes;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class ValidationService {
 
 	public boolean validate(String username, String password) {

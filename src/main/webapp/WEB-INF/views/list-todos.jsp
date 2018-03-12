@@ -4,18 +4,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Login</title>
+<title>List TODOs</title>
 </head>
 <body>
-
-<form method="POST" action="/login">
-	<p style="color: red">${errorMessage }</p>
-	User name:<br/>
-	<input type="text" name="name"/><br/>
-	Password:<br/>
-	<input type="password" name="password"/><br/>
-	<input type="submit" value="Submit"/>
-	
-</form>
+Your Todos are 
+${todos}
 </body>
 </html>
