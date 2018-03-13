@@ -2,6 +2,8 @@ package com.puzhen.in28minutes.todo;
 
 import java.util.Date;
 
+import javax.validation.constraints.Size;
+
 public class Todo {
 
     public int getId() {
@@ -16,11 +18,12 @@ public class Todo {
 	public void setUser(String user) {
 		this.user = user;
 	}
-	public String getTodo() {
-		return todo;
+
+	public String getDesc() {
+		return desc;
 	}
-	public void setTodo(String todo) {
-		this.todo = todo;
+	public void setDesc(String desc) {
+		this.desc = desc;
 	}
 	public Date getDate() {
 		return date;
@@ -36,18 +39,27 @@ public class Todo {
 	}
 	private int id;
     private String user;
-    private String todo;
-    private Date date;
-    private boolean complete;
     
-	public Todo(int id, String user, String todo, Date date, boolean complete) {
+    @Size(min = 6, message = "Enter at least 6 characters")
+    private String desc;
+    private Date date;
+    @Override
+	public String toString() {
+		return "Todo [id=" + id + ", user=" + user + ", todo=" + desc + ", date=" + date + ", complete=" + complete
+				+ "]";
+	}
+	private boolean complete;
+    
+	public Todo(int id, String user, String desc, Date date, boolean complete) {
 		super();
 		this.id = id;
 		this.user = user;
-		this.todo = todo;
+		this.desc = desc;
 		this.date = date;
 		this.complete = complete;
 	}
+	
+	public Todo() {}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
